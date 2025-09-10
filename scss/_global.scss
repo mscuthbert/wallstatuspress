@@ -1,7 +1,11 @@
+@use "sass:color";
+@use "mixins";
+@use "variables";
+
 // Global styling for this template
 body {
   overflow-x: hidden;
-  @include body-font;
+  @include mixins.body-font;
 }
 
 p {
@@ -9,14 +13,14 @@ p {
 }
 
 a {
-  color: $primary;
+  color: variables.$primary;
   &:hover {
-    color: darken($primary, 10%);
+    color: color.adjust(variables.$primary, $lightness: -10%);
   }
 }
 
 .text-primary {
-  color: $primary !important;
+  color: variables.$primary !important;
 }
 
 h1,
@@ -26,7 +30,7 @@ h4,
 h5,
 h6 {
   font-weight: 700;
-  @include heading-font;
+  @include mixins.heading-font;
 }
 
 section {
@@ -42,7 +46,7 @@ section {
     font-style: italic;
     margin-bottom: 75px;
     text-transform: none;
-    @include serif-font;
+    @include mixins.serif-font;
   }
 }
 @media(min-width:768px) {
@@ -53,7 +57,7 @@ section {
 
 // Button Styles
 .btn {
-  @include heading-font;
+  @include mixins.heading-font;
   font-weight: 700;
 }
 
@@ -63,13 +67,13 @@ section {
 }
 
 .btn-primary {
-  background-color: $primary;
-  border-color: $primary;
+  background-color: variables.$primary;
+  border-color: variables.$primary;
   &:active,
   &:focus,
   &:hover {
-    background-color: darken($primary, 7.5%) !important;
-    border-color: darken($primary, 7.5%) !important;
+    background-color: color.adjust(variables.$primary, $lightness: -7.5%) !important;
+    border-color: color.adjust(variables.$primary, $lightness: -7.5%) !important;
     color: white;
   }
   &:active,
@@ -80,12 +84,12 @@ section {
 
 // Highlight color customization
 ::-moz-selection {
-  background: $primary;
+  background: variables.$primary;
   text-shadow: none;
 }
 
 ::selection {
-  background: $primary;
+  background: variables.$primary;
   text-shadow: none;
 }
 

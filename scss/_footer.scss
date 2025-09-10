@@ -1,3 +1,6 @@
+@use "mixins";
+@use "variables";
+
 // Styling for the footer
 footer {
   padding: 25px 0;
@@ -6,14 +9,14 @@ footer {
     font-size: 90%;
     line-height: 40px;
     text-transform: none;
-    @include heading-font;
+    @include mixins.heading-font;
   }
   ul.quicklinks {
     font-size: 90%;
     line-height: 40px;
     margin-bottom: 0;
     text-transform: none;
-    @include heading-font;
+    @include mixins.heading-font;
   }
 }
 
@@ -32,11 +35,11 @@ ul.social-buttons {
       color: white;
       border-radius: 100%;
       outline: none;
-      background-color: $gray-900;
+      background-color: variables.$gray-900;
       &:active,
       &:focus,
       &:hover {
-        background-color: $primary;
+        background-color: variables.$primary;
       }
     }
   }

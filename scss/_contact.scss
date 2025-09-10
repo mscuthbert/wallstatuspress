@@ -1,11 +1,14 @@
+@use "mixins";
+@use "variables";
+
 // Styling for the contact section
 section#contact {
-  background-color: $gray-900;
+  background-color: variables.$gray-900;
   background-image: url('../img/map-image.png');
   background-repeat: no-repeat;
   background-position: center;
   .section-heading {
-    color: $white;
+    color: variables.$white;
   }
   .form-group {
     margin-bottom: 25px;
@@ -21,27 +24,27 @@ section#contact {
     }
   }
   .form-control:focus {
-    border-color: $primary;
+    border-color: variables.$primary;
     box-shadow: none;
   }
   ::-webkit-input-placeholder {
     font-weight: 700;
-    color: $gray-400;
-    @include heading-font;
+    color: variables.$gray-400;
+    @include mixins.heading-font;
   }
   :-moz-placeholder {
     font-weight: 700;
-    color: $gray-400;
-    @include heading-font;
+    color: variables.$gray-400;
+    @include mixins.heading-font;
   }
   ::-moz-placeholder {
     font-weight: 700;
-    color: $gray-400;
-    @include heading-font;
+    color: variables.$gray-400;
+    @include mixins.heading-font;
   }
   :-ms-input-placeholder {
     font-weight: 700;
-    color: $gray-400;
-    @include heading-font;
+    color: variables.$gray-400;
+    @include mixins.heading-font;
   }
 }

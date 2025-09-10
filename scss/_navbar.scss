@@ -1,6 +1,10 @@
+@use "sass:color";
+@use "mixins";
+@use "variables";
+
 // Styling for the navbar
 #mainNav {
-  background-color: $gray-900;
+  background-color: variables.$gray-900;
   .navbar-toggler {
     font-size: 12px;
     right: 0;
@@ -8,17 +12,17 @@
     text-transform: uppercase;
     color: white;
     border: 0;
-    background-color: $primary;
-    @include heading-font;
+    background-color: variables.$primary;
+    @include mixins.heading-font;
   }
   .navbar-brand {
-    color: $primary;
-    @include script-font;
+    color: variables.$primary;
+    @include mixins.script-font;
     &.active,
     &:active,
     &:focus,
     &:hover {
-      color: darken($primary, 10%);
+      color: color.adjust(variables.$primary, $lightness: -10%);
     }
   }
   .navbar-nav {
@@ -29,10 +33,10 @@
         padding: 0.75em 0;
         letter-spacing: 1px;
         color: white;
-        @include heading-font;
+        @include mixins.heading-font;
         &.active,
         &:hover {
-          color: $primary;
+          color: variables.$primary;
         }
       }
     }
@@ -63,7 +67,7 @@
     &.navbar-shrink {
       padding-top: 0;
       padding-bottom: 0;
-      background-color: $gray-900;
+      background-color: variables.$gray-900;
       .navbar-brand {
         font-size: 1.25em;
         padding: 12px 0;
