@@ -25,7 +25,7 @@ npm install
 npm run dev
 ```
 
-- Entry point is `main.js`
+- Entry points are `index.html` for text and `main.js` for code
 - SCSS lives in `scss/`
 - Static assets (Publications, CNAME, favicon, etc.) go in `public/`
 
